@@ -1,0 +1,44 @@
+@use "sass:map";
+
+$colors: (
+  neutral: (
+    100: white,
+    200: #f6f6f6,
+    250: #e8e8e8,
+    300: #bbb,
+    400: #5c5c5c,
+    900: #1e1e1e,
+  ),
+  primary: (
+    400: #e87822,
+    500: #de6a11,
+    600: #cd5a01,
+    700: #ab4a00,
+  ),
+);
+
+@function clr($color, $shade) {
+  @if map.has-key($colors, $color, $shade) {
+    @return map.get($colors, $color, $shade);
+  } @else {
+    @error '$colors does not contain that color.';
+  }
+}
+
+:root {
+  --clr-bg: #{clr(neutral, 200)};
+  --clr-text: #{clr(neutral, 900)};
+  --clr-primary: #{clr(primary, 400)};
+  --clr-nav-text: #{clr(neutral, 900)};
+  --clr-nav-bg: #{clr(primary, 400)};
+}
+
+:root.dark {
+  --clr-bg: #{clr(neutral, 900)};
+  --clr-text: #{clr(neutral, 250)};
+  --clr-primary: #{clr(primary, 500)};
+  --clr-nav-text: #{clr(neutral, 250)};
+  --clr-nav-bg: #{clr(primary, 700)};
+  // --clr-nav-text: #{clr(primary, 700)};
+  // --clr-nav-bg: #{clr(neutral, 250)};
+}

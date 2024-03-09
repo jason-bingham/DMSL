@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+:root {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-family: $ff-base;
+  font-size: fs(400);
+  font-weight: $fw-regular;
+  color: var(--clr-text);
+  line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--clr-bg);
+  transition: ease-in-out 200ms;
+}
+
+main {
+  padding-top: 2rem;
+}
