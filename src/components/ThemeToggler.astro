@@ -55,18 +55,33 @@
   /** Represent the toggle theme class with a variable */
   const DARK_THEME_CLASS = "dark";
 
+  // Save selected theme to local storage
+  // Represent the local storage key by a variable
+  const COLOR_MODE = "COLOR_MODE";
+  // Represent the local storage values by a variable
+  const LIGHT_THEME="LIGHT";
+  const DARK_THEME="DARK";
+
   /** Grab the toggle */
   /** Had to add an id (could've been a class instead) to the button b/c the below was selecting a different button. */
   const toggle = document.querySelector("#theme-toggler");
+  
+
   /** Grab the document root element. In this case <html>  */
   const rootEl = document.documentElement;
+  
   // const { log } = console;
 
   if (toggle) {
     toggle.addEventListener("click", () => {
       /** toggle the "dark" class on the root element */
       rootEl.classList.toggle("dark");
-      // log("clicked");
+      const colorMode = rootEl.classList.contains(DARK_THEME_CLASS) ? DARK_THEME : LIGHT_THEME;
+      // Save current theme to local storage
+      window.localStorage.setItem(COLOR_MODE, colorMode);
     });
   }
+
+  
+
 </script>

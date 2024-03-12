@@ -7,6 +7,7 @@ $colors: (
     250: #e8e8e8,
     300: #bbb,
     400: #5c5c5c,
+    800: #222,
     900: #1e1e1e,
   ),
   primary: (
@@ -29,16 +30,22 @@ $colors: (
   --clr-bg: #{clr(neutral, 200)};
   --clr-text: #{clr(neutral, 900)};
   --clr-primary: #{clr(primary, 400)};
+
+  --clr-hero-text: #{clr(neutral, 900)};
+  --clr-hero-bg: #{clr(primary, 400)};
+
   --clr-nav-text: #{clr(neutral, 900)};
   --clr-nav-bg: #{clr(primary, 400)};
 }
 
 :root.dark {
-  --clr-bg: #{clr(neutral, 900)};
+  --clr-bg: #{clr(neutral, 800)};
   --clr-text: #{clr(neutral, 250)};
-  --clr-primary: #{clr(primary, 500)};
-  --clr-nav-text: #{clr(neutral, 250)};
-  --clr-nav-bg: #{clr(primary, 700)};
-  // --clr-nav-text: #{clr(primary, 700)};
-  // --clr-nav-bg: #{clr(neutral, 250)};
+  --clr-primary: #{clr(primary, 700)};
+
+  --clr-hero-text: #{clr(primary, 400)};
+  --clr-hero-bg: #{clr(neutral, 900)};
+
+  --clr-nav-text: #{clr(primary, 400)};
+  --clr-nav-bg: #{clr(neutral, 900)};
 }
