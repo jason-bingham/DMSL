@@ -1,9 +1,36 @@
 ---
-import Header from "../components/Header.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import IndexLayout from "../layouts/IndexLayout.astro";
+import Cards from "../components/Cards.astro"
 ---
-<Header></Header>
-<BaseLayout title="DMSL Arquitetura e Construção">
+<IndexLayout title="DMSL Arquitetura e Construção">
 	<h1 class="sr-only">DMSL</h1>
+	<Cards
+		cards={[
+			{
+				linksTo: "/projetos",
+				image: "/index/cards/card_arquitetura_TEVJRJ.jpg",
+				title: "Arquitetura",
+				text: "Serviço completo do primeiro rascunho à entrega das chaves."
+			},
+			{
+				linksTo: "/projetos",
+				image: "/index/cards/card_interiores_AptRI.jpg",
+				title: "Interiores",
+				text: "Cuidamos dos mínimos detalhes para criar um ambiente que você vai amar habitar."
+			},
+			{
+				linksTo: "/projetos",
+				image: "public/index/cards/card_construcao_AptRM.jpg",
+				title: "Construção",
+				text: "Seja para os nossos proprios projetos ou execução de obras já projetadas, os nossos colaboradores são profissionais e experientes."
+			},
+			{
+				linksTo: "/projetos",
+				image: "public/index/cards/card_demaisservicos_AptJPH.jpg",
+				title: "Demais Serviços",
+				text: "Estudo de viabilidade, análise de custo, projetos complementares, planejamento, gerenciamento e execução de obra."
+			},
+		]}
+	/>
 	
-</BaseLayout>
+</IndexLayout>

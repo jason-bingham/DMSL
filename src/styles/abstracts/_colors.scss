@@ -7,7 +7,7 @@ $colors: (
     250: #e8e8e8,
     300: #bbb,
     400: #5c5c5c,
-    800: #222,
+    800: #2a2a2a,
     900: #1e1e1e,
   ),
   primary: (
@@ -36,6 +36,12 @@ $colors: (
 
   --clr-nav-text: #{clr(neutral, 900)};
   --clr-nav-bg: #{clr(primary, 400)};
+
+  --clr-footer-text: #{clr(neutral, 900)};
+  --clr-footer-bg: #{clr(primary, 400)};
+
+  --clr-card-bg: #{clr(neutral, 100)};
+  --clr-card-shadow: #{clr(neutral, 300)};
 }
 
 :root.dark {
@@ -48,4 +54,10 @@ $colors: (
 
   --clr-nav-text: #{clr(primary, 400)};
   --clr-nav-bg: #{clr(neutral, 900)};
+
+  --clr-footer-text: #{clr(primary, 400)};
+  --clr-footer-bg: #{clr(neutral, 900)};
+
+  --clr-card-bg: #{clr(neutral, 900)};
+  --clr-card-shadow: #{clr(neutral, 400)};
 }

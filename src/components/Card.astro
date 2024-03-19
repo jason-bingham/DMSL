@@ -1,0 +1,152 @@
+---
+export type Props = {
+  linksTo: string;
+  image: string;
+  title: string;
+  text: string;
+};
+
+const { linksTo, image, title, text } = Astro.props;
+---
+<a href={linksTo} class="card" data-type="category">
+  <img
+    loading="lazy"
+    class="card-image"
+    src={image}
+    alt={title}
+  />
+  <h2 class="card-title | ff-accent fs-700 fw-medium">{title}</h2>
+  <p class="card-text fw-light">
+    {text}
+  </p>
+</a>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .card {
+    display: grid;
+    gap: $gap-grid;
+    padding: $padding-card-body;
+    border-radius: 20px;
+    box-shadow: 12px 12px 24px var(--clr-card-shadow), -12px -12px 24px var(--clr-card-shadow);
+    animation: fade-in linear;
+    animation-timeline: view();
+    background: var(--clr-card-bg);
+
+    &[data-type="category"] {
+      // For transitions:
+      opacity: 0;
+      position: relative;
+
+      grid-template:
+        "img" 250px
+        "title" auto
+        "text" auto / 1fr;
+
+      @include mq(medium) {
+        grid-template:
+          "img title" clamp(0.4rem, 0.5rem + 3.25vw, 2.25rem)
+          "img text" 1fr / 50%;
+      }
+
+      transition: transform 500ms ease-out;
+
+      margin-top: 3rem;
+
+      &:nth-of-type(2n) {
+        @include mq(medium) {
+          grid-template:
+            "title img" clamp(0.4rem, 0.5rem + 3.25vw, 2.25rem)
+            "text img" 1fr / 50%;
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 4rem;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+
+        & .card-title::after {
+          height: 10px;
+        }
+
+        & .card-image {
+          filter: grayscale(0);
+        }
+      }
+    }
+
+    @media (hover: hover) {
+      .card-image {
+        filter: grayscale(0.6);
+      }
+    }
+
+    &-image {
+      grid-area: img;
+      transition: 500ms;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    &-title {
+      grid-area: title;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        left: 0;
+        top: clamp(0.6rem, 0.7rem + 3.25vw, 2.45rem);
+        // bottom: 0;
+        height: 1px;
+        width: 100%;
+        background-color: clr(primary, 400);
+        content: "";
+        z-index: -1;
+        transition: 500ms;
+      }
+    }
+
+    &-text {
+      grid-area: text;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      scale: 0.6;
+    }
+    40% {
+      opacity: 1;
+      scale: 1;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  // @media (max-width: 35em) {
+  //   .card[data-type="category"] {
+  //     grid-template:
+  //       "img" 350px
+  //       "title" 1fr
+  //       "text" 1fr / 100%;
+  //   }
+  // }
+  // "img title" clamp(0.4rem, 0.5rem + 3.25vw, 2.25rem)
+  // "img text" 1fr / 50%;
+
+  .card-img-box {
+    grid-area: img;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+</style>
