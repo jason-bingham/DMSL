@@ -13,6 +13,6 @@ type Props = {
 const { cards } = Astro.props;
 ---
 
-<div class=" container | cards" data-type="narrow">
+<div class=" container" data-type="narrow">
   {cards.map((card) => <Card {...card} />)}
 </div>

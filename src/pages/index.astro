@@ -1,6 +1,8 @@
 ---
 import IndexLayout from "../layouts/IndexLayout.astro";
-import Cards from "../components/Cards.astro"
+import Cards from "../components/Cards.astro";
+import Testimonials from "../components/Testimonials.astro";
+import CTAOrcamento from "../components/CTAOrcamento.astro";
 ---
 <IndexLayout title="DMSL Arquitetura e Construção">
 	<h1 class="sr-only">DMSL</h1>
@@ -32,5 +34,26 @@ import Cards from "../components/Cards.astro"
 			},
 		]}
 	/>
+	<Testimonials
+		testimonials={[
+			{
+				photo: "https://source.unsplash.com/woman-wearing-black-scoop-neck-long-sleeved-shirt-Zz5LQe-VSMY",
+				name: "Jane Doe",
+				quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nam aperiam sapiente ullam error libero odit esse vel recusandae, quos quia earum. Blanditiis modi dolore inventore repellat laudantium eius nemo!",
+			},
+			{
+				photo: "https://source.unsplash.com/women-holding-her-collar-standing-near-wall-J1OScm_uHUQ",
+				name: "Jane Doe",
+				quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nam aperiam sapiente ullam error libero odit esse vel recusandae, quos quia earum. Blanditiis modi dolore inventore repellat laudantium eius nemo!",
+			},
+			{
+				photo: "https://source.unsplash.com/vertical-portrait-of-short-haired-mixed-race-woman-looking-at-camera-and-smiling-happily-while-posing-against-neutral-background-in-studio-W3e4DI003do",
+				name: "Jane Doe",
+				quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nam aperiam sapiente ullam error libero odit esse vel recusandae, quos quia earum. Blanditiis modi dolore inventore repellat laudantium eius nemo!",
+			},
+		]}
+	/>
+
+	<CTAOrcamento />
 	
 </IndexLayout>

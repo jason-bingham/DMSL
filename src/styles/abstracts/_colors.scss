@@ -42,6 +42,8 @@ $colors: (
 
   --clr-card-bg: #{clr(neutral, 100)};
   --clr-card-shadow: #{clr(neutral, 300)};
+
+  --clr-testimonial-quotes: #{clr(neutral, 250)};
 }
 
 :root.dark {
@@ -60,4 +62,6 @@ $colors: (
 
   --clr-card-bg: #{clr(neutral, 900)};
   --clr-card-shadow: #{clr(neutral, 400)};
+
+  --clr-testimonial-quotes: #{clr(neutral, 900)};
 }

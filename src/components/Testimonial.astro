@@ -1,0 +1,55 @@
+---
+export type Props = {
+  photo: string;
+  name: string;
+  quote: string;
+}
+
+const { photo, name, quote } = Astro.props;
+---
+
+<div class="testimonial">
+  <img
+    loading="lazy"
+    class="testimonial-image mx-auto"
+    src={photo}
+    alt={name} "s testimonial"
+  />
+  <p class="testimonial-text fs-300">
+    {quote}
+  </p>
+  <h3 class="testimonial-name fs-500 text-center">-{name}</h3>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .testimonial {
+    display: grid;
+    gap: $gap-grid;
+    padding: $padding-card-body;
+
+    & .testimonial-image {
+      width: min(100%, 200px);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    & .testimonial-text {
+      position: relative;
+      font-style: italic;
+    }
+    & .testimonial-text::before {
+      content: '"';
+      position: absolute;
+      font-size: 7rem;
+      top: -3rem;
+      left: -1.75rem;
+      color: var(--clr-testimonial-quotes);
+      font-family: $ff-accent;
+      z-index: -1;
+    }
+  }
+
+</style>

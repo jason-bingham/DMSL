@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/PageLayout.astro
-title: projetos
+title: DMSL projetos
 ---
 
 - Be present and enjoy the now

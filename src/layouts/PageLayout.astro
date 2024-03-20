@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const {title} = Astro.props;
 ---
 
-<Head />
-<BaseLayout {title}>
+<Head {title} />
+<BaseLayout>
   <slot />
 </BaseLayout>

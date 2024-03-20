@@ -1,0 +1,20 @@
+---
+import Testimonial from "./Testimonial.astro";
+
+import type { Props as TestimonialProp } from "./Testimonial.astro";
+
+type Props = {
+  testimonials: TestimonialProp[];
+}
+
+const { testimonials } = Astro.props;
+---
+
+<section class="container | testimonials">
+  <h1 class="ff-accent fs-600 text-center">
+    O que os nossos clientes estão dizendo
+  </h1>
+  <div class="even-columns">
+    {testimonials.map((testimonial) => <Testimonial {...testimonial} />)}
+  </div>
+</section>

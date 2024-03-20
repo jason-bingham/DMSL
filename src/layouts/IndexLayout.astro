@@ -2,10 +2,12 @@
 import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const { title } = Astro.props
 ---
-<Head />
+<Head {title}/>
 <Header></Header>
-<BaseLayout title="DMSL Arquitetura e Construção">
+<BaseLayout>
 
 	<slot />
 	
