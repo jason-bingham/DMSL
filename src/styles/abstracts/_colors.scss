@@ -3,10 +3,14 @@
 $colors: (
   neutral: (
     100: white,
+    150: #fafafa,
     200: #f6f6f6,
     250: #e8e8e8,
     300: #bbb,
     400: #5c5c5c,
+    500: #4a4a4a,
+    600: #3f3f3f,
+    700: #333,
     800: #2a2a2a,
     900: #1e1e1e,
   ),
@@ -27,41 +31,48 @@ $colors: (
 }
 
 :root {
+  // GLOBALS
   --clr-bg: #{clr(neutral, 200)};
   --clr-text: #{clr(neutral, 900)};
   --clr-primary: #{clr(primary, 400)};
+  --clr-relief-bg: #{clr(neutral, 150)};
+  --clr-shadow: #{clr(neutral, 300)};
 
-  --clr-hero-text: #{clr(neutral, 900)};
-  --clr-hero-bg: #{clr(primary, 400)};
-
-  --clr-nav-text: #{clr(neutral, 900)};
-  --clr-nav-bg: #{clr(primary, 400)};
-
-  --clr-footer-text: #{clr(neutral, 900)};
-  --clr-footer-bg: #{clr(primary, 400)};
-
-  --clr-card-bg: #{clr(neutral, 100)};
-  --clr-card-shadow: #{clr(neutral, 300)};
-
+  // UNIQUES
   --clr-testimonial-quotes: #{clr(neutral, 250)};
+
+  // INTERMEDIARIES
+  --clr-element-bg: var(--clr-primary);
+  --clr-element-text: var(--clr-text);
 }
 
 :root.dark {
+  // GLOBALS
   --clr-bg: #{clr(neutral, 800)};
   --clr-text: #{clr(neutral, 250)};
-  --clr-primary: #{clr(primary, 700)};
+  --clr-primary: #{clr(primary, 400)};
+  --clr-relief-bg: #{clr(neutral, 900)};
+  --clr-shadow: #{clr(neutral, 400)};
 
-  --clr-hero-text: #{clr(primary, 400)};
-  --clr-hero-bg: #{clr(neutral, 900)};
-
-  --clr-nav-text: #{clr(primary, 400)};
-  --clr-nav-bg: #{clr(neutral, 900)};
-
-  --clr-footer-text: #{clr(primary, 400)};
-  --clr-footer-bg: #{clr(neutral, 900)};
-
-  --clr-card-bg: #{clr(neutral, 900)};
-  --clr-card-shadow: #{clr(neutral, 400)};
-
+  // UNIQUES
   --clr-testimonial-quotes: #{clr(neutral, 900)};
+
+  // INTERMEDIARIES
+  --clr-element-bg: var(--clr-relief-bg);
+  --clr-element-text: var(--clr-primary);
+}
+
+:root {
+  // LOCALS
+  --clr-hero-text: var(--clr-element-text);
+  --clr-hero-bg: var(--clr-element-bg);
+
+  --clr-nav-text: var(--clr-element-text);
+  --clr-nav-bg: var(--clr-element-bg);
+
+  --clr-footer-text: var(--clr-element-text);
+  --clr-footer-bg: var(--clr-element-bg);
+
+  --clr-card-bg: var(--clr-relief-bg);
+  --clr-card-shadow: var(--clr-shadow);
 }

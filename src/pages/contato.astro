@@ -1,0 +1,163 @@
+---
+import PageLayout from "../layouts/PageLayout.astro"
+---
+<PageLayout>
+  <section class="container" data-type="xs">
+    <form
+      action="mailto:jbingham223@gmail.com"
+      method="post"
+      enctype="text/plain"
+    >
+      <input
+        type="hidden"
+        name="email"
+        value="jbingham223@gmail.com"
+        tabindex="-1"
+      />
+      <fieldset class="card">
+        <div>
+          <label for="nome">Nome:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Nome *"
+            required
+          />
+        </div>
+        <div>
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="user_email"
+            placeholder="E-mail *"
+            required
+          />
+        </div>
+        <div>
+          <label for="assunto">Assunto:</label>
+          <select name="assunto" id="assunto" required>
+            <option value selected disabled>Seleciona assunto *</option>
+            <option value="Dúvida">Dúvida</option>
+            <option value="Sugestão">Sugestão</option>
+            <option value="Orçamento">Orçamento</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+        <div>
+          <label for="mensagem">Mensagem:</label>
+          <textarea
+            id="mensagem"
+            name="email_mensagem"
+            placeholder="Mensagem *"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+        <div class="flex-group">
+          <input class="mx-auto" type="submit" value="Submit" />
+        </div>
+      </fieldset>
+    </form>
+  </section>
+  <section class="contact-info | container | text-center" data-type="xs">
+    <p>Rua Cotoxó, 611, sala 11<br />Perdizes, São Paulo/SP</p>
+    <p>contato@dmslarquitetos.com.br</p>
+    <p>renata@dmslarquitetos.com.br</p>
+    <p>vinicius@dmslarquitetos.com.br</p>
+    <p>(11) 91427-3893</p>
+  </section>
+</PageLayout>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  // COLORS
+  form {
+    --clr-formfield-bg: #{clr(neutral, 250)};
+    --clr-formfield-border: #{clr(neutral, 300)};
+  }
+
+  :root.dark form {
+    --clr-formfield-bg: #{clr(neutral, 600)};
+    --clr-formfield-border: #{clr(neutral, 500)};
+  }
+
+  form {
+    accent-color: clr(primary, 400);
+  }
+
+  fieldset {
+    padding: 1rem;
+    color: clr(neutral, 900);
+    border: none;
+    margin-bottom: 3rem;
+  }
+
+  label {
+    display: block;
+    color: var(--clr-text);
+  }
+
+  input {
+    width: 100%;
+    padding-inline: 5px;
+    color: var(--clr-text);
+    background: var(--clr-formfield-bg);
+    border: 1px solid var(--clr-formfield-border);
+  }
+
+  textarea {
+    width: 100%;
+    padding-inline: 5px;
+    color: var(--clr-text);
+    background: var(--clr-formfield-bg);
+    border: 1px solid var(--clr-formfield-border);
+  }
+
+  input[type="submit"] {
+    width: auto;
+    padding: 0.25em 1em;
+    border-radius: 1em;
+    border: none;
+    background-color: clr(primary, 400);
+    color: clr(neutral, 900);
+  }
+
+  select {
+    padding-inline: 5px;
+    color: var(--clr-text);
+    background: var(--clr-formfield-bg);
+    border: 1px solid var(--clr-formfield-border);
+  }
+
+  //CONTACT INFO
+  .contact-info {
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .contact-info p + p {
+    margin-top: 0.5rem;
+
+    &::before {
+      content: ".";
+      color: clr(primary, 400);
+      position: absolute;
+      left: 50%;
+      margin-top: -22px;
+    }
+  }
+
+  //CARD PROPERTIES
+  .card {
+    display: grid;
+    gap: $gap-grid;
+    padding: $padding-card-body;
+    border-radius: 20px;
+    box-shadow: 12px 12px 24px var(--clr-card-shadow), -12px -12px 24px var(--clr-card-shadow);
+    background: var(--clr-card-bg);
+  }
+
+</style>

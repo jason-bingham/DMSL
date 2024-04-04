@@ -1,0 +1,15 @@
+---
+import Projeto from "./Projeto.astro";
+
+import type { Props as ProjetoProp } from "./Projeto.astro";
+
+type Props = {
+  projetos: ProjetoProp[];
+};
+
+const { projetos } = Astro.props;
+---
+
+<section class="projeto-profiles | container" data-type="narrow">
+  {projetos.map((projeto) => <Projeto {...projeto} />)}
+</section>

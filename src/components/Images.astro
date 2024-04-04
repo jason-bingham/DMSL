@@ -1,0 +1,13 @@
+---
+import Image from "./Image.astro";
+
+import type { Props as ImageProp } from "./Image.astro";
+
+type Props = {
+  images: typeof Image[];
+};
+
+const { images } = Astro.props;
+---
+
+{images.map((image) => <Image {...image} />)}

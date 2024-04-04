@@ -15,7 +15,7 @@ import ThemeToggler from "./ThemeToggler.astro"
     id="nav-links"
     class="flex-group mx-auto ff-secondary"
     data-visible="false">
-    <li><a href="/projetos">Projetos</a></li>
+    <li><a href="/projetos">Nossos Trabalhos</a></li>
     <li><a href="/sobre">Sobre</a></li>
     <li><a href="/contato">Contato</a></li>
   </ul>
@@ -334,7 +334,6 @@ navHam.addEventListener("click", () => {
 // NAV
 
 const { pathname } = window.location;
-console.log(pathname);
 const activeNavElement = document.querySelector(
   `nav a[href="${pathname}"]`
 );

@@ -1,0 +1,66 @@
+---
+type Props = {
+  href: string,
+  type: string   // accent, outline
+};
+
+const { href, type } = Astro.props;
+
+let Element = "button";
+if (href) Element = "a";
+---
+
+  <Element
+    class="box-shadow-even-1 mx-auto ff-secondary fw-regular"
+    {href}
+    data-type={type}
+    >
+    <slot />
+  </Element>
+
+<style lang="scss">
+
+  @use "../styles/abstracts/" as *;
+
+  // button reset
+  a,
+  button {
+    display: inline-flex;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1;
+    border: 0;
+    padding: 1.125em 2em;
+    transition: 275ms ease;
+    border-radius: 100vh;
+    justify-content: center;
+    margin: 3rem auto;
+
+    &[data-type="accent"] {
+      background-color: clr(primary, 400);
+      color: clr(neutral, 900);
+      transition: 500ms ease-out;
+
+      &:is(:hover, :focus) {
+        background: rgba(clr(primary, 400), 0.9);
+        transform: scale(1.05);
+      }
+    }
+
+    &[data-type="outline"] {
+      --outline-size: 4px;
+      background-color: transparent;
+      outline: var(--outline-size) solid clr(neutral, 100);
+      outline-offset: calc(var(--outline-size) * -1);
+      color: clr(neutral, 100);
+
+      &:is(:hover, :focus) {
+        background: clr(neutral, 100);
+        color: clr(neutral, 900);
+      }
+    }
+  }
+
+
+</style>

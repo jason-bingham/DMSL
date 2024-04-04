@@ -1,0 +1,42 @@
+---
+export type Props = [
+  src: string,
+  alt: string,
+  current: boolean,
+  contain: boolean
+];
+
+const { src, alt, contain = false, current = false } = Astro.props;
+
+let classes = "";
+if (contain && current) classes = "contain current"
+else if (contain) classes = "contain"
+else if (current) classes = "current"
+---
+
+<img
+  src = { src }
+  loading = "lazy"
+  alt = { alt }
+  class = { classes }
+/>
+
+<style lang="scss">
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: 200ms;
+    position: absolute;
+  }
+
+  .contain {
+    object-fit: contain;
+  }
+
+  .current {
+    opacity: 1;
+  }
+</style>
