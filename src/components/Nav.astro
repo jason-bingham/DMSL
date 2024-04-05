@@ -184,7 +184,7 @@ svg {
 
 .nav-hamburger .nav-line {
   transition: stroke 1s;
-  stroke: clr(neutral, 900);
+  stroke: var(--clr-nav-text);
 }
 
 .nav-hamburger.nav-links-open .bottom,
@@ -296,14 +296,15 @@ svg {
     top: 40px;
     left: -100%;
     transition: opacity 750ms;
-    background-color: rgba(clr(primary, 400), 0.9);
+    background-color: var(--clr-nav-bg);
+    // background-color: rgba(clr(primary, 400), 0.9);
     line-height: 2;
     padding: 0.75rem;
     width: 100%;
     text-align: center;
   }
   #nav-links.nav-links-open {
-    opacity: 1;
+    opacity: 0.9;
     left: 0;
   }
 }
@@ -318,13 +319,13 @@ navHam.addEventListener("click", () => {
   console.log("clicked");
   const isOpen = navHam.getAttribute("aria-expanded");
   if (isOpen === "false") {
-    navHam.setAttribute("aria-expanded", true);
-    navMenu.setAttribute("data-visible", true);
+    navHam.setAttribute("aria-expanded", "true");
+    navMenu.setAttribute("data-visible", "true");
     navHam.classList.add("nav-links-open");
     navMenu.classList.add("nav-links-open");
   } else {
-    navHam.setAttribute("aria-expanded", false);
-    navMenu.setAttribute("data-visible", false);
+    navHam.setAttribute("aria-expanded", "false");
+    navMenu.setAttribute("data-visible", "false");
     navHam.classList.remove("nav-links-open");
     navMenu.classList.remove("nav-links-open");
   }

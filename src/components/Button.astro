@@ -6,17 +6,17 @@ type Props = {
 
 const { href, type } = Astro.props;
 
-let Element = "button";
-if (href) Element = "a";
+let El = "button";
+if (href) El = "a";
 ---
 
-  <Element
-    class="box-shadow-even-1 mx-auto ff-secondary fw-regular"
-    {href}
+  <a
     data-type={type}
+    {href}
+    class="box-shadow-even-1 mx-auto ff-secondary fw-regular"
     >
     <slot />
-  </Element>
+</a>
 
 <style lang="scss">
 
