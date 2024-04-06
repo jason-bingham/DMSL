@@ -5,7 +5,7 @@ import Button from "../components/Button.astro";
 
 <PageLayout>
   <section
-    class="projetos | container | grid-auto-fit margin-block-end-48 color-on-hover"
+    class="projetos | container | grid-auto-fit margin-block-end-48 color-on-hover" style="--min-element-width: 175px"
   >
     <a href="#TEV_JRJ_H33" class="projeto">
       <img
@@ -1665,6 +1665,10 @@ import Button from "../components/Button.astro";
     --gap-grid: 1rem;
     position: relative;
     z-index: 5;
+
+    @media (hover: none) {
+      display: none;
+    }
   }
 
   .scroll-anchor {
@@ -1756,7 +1760,7 @@ import Button from "../components/Button.astro";
       overflow: hidden;
       object-position: center;
       position: relative;
-      background-color: clr(neutral, 200);
+      background-color: var(--clr-bg);
 
       img {
         width: 100%;
@@ -1855,14 +1859,6 @@ import Button from "../components/Button.astro";
     box-shadow: 12px 12px 24px var(--clr-card-shadow), -12px -12px 24px var(--clr-card-shadow);
     animation: fade-in linear;
     animation-timeline: view();
-
-    &-image {
-      grid-area: img;
-      transition: 500ms;
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
-    }
 
     &-title {
       grid-area: title;

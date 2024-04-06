@@ -95,7 +95,7 @@ import ThemeToggler from "./ThemeToggler.astro"
   @use "../styles/abstracts/" as *;
 
 .nav {
-  --flex-column-gap: #{size(48)};
+  --flex-column-gap: max(0.5rem, 2.65vw);
   z-index: 100;
   width: 100%;
   outline: 10px solid var(--clr-bg);
@@ -104,7 +104,8 @@ import ThemeToggler from "./ThemeToggler.astro"
   a {
     transition: ease-in-out 400ms;
     padding-inline: 0.5rem;
-    border-radius: 0.25rem;;
+    border-radius: 0.25rem;
+    font-size: clamp(0.7rem, 2.25vw, 1rem);
   }
 
   a:is(:hover, :focus) {

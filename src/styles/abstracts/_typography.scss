@@ -1,3 +1,7 @@
+@use "sass:map";
+
+// FONT FAMILIES:
+
 @font-face {
   font-family: "Kaisei Opti";
   font-style: normal;
@@ -97,6 +101,8 @@ $ff-secondary: "Roboto Slab", serif;
   font-family: $ff-secondary;
 }
 
+// FONT SIZES:
+
 $font-sizes: (
   900: clamp(2.5rem, 0.5rem + 7vw, 5rem),
   800: clamp(1.875rem, 0.5rem + 5vw, 3.75rem),
@@ -107,6 +113,16 @@ $font-sizes: (
   300: 1rem,
   200: 0.75rem,
 );
+
+@function fs($font-size) {
+  @if map.has-key($font-sizes, $font-size) {
+    @return map.get($font-sizes, $font-size);
+  } @else {
+    @error '$font-sizes does not contain that size.';
+  }
+}
+
+// FONT WEIGHTS:
 
 $fw-thin: 100;
 $fw-light: 300;
@@ -143,6 +159,8 @@ $fw-black: 900;
 .fw-black {
   font-weight: $fw-black;
 }
+
+// FONT STYLES:
 
 .fs-italic {
   font-style: italic;

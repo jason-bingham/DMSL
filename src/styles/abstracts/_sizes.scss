@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $sizes: (
   4: 0.25rem,
   8: 0.5rem,
@@ -16,3 +18,11 @@ $padding-card-body: clamp(2rem, 3vw, 5rem);
 
 $gap-grid: 1.5rem;
 $gap-flex-group: 1rem;
+
+@function size($size) {
+  @if map.has-key($sizes, $size) {
+    @return map.get($sizes, $size);
+  } @else {
+    @error '$sizes does not contain that size.';
+  }
+}

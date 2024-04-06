@@ -3,5 +3,8 @@
 .grid-auto-fit {
   display: grid;
   grid-gap: var(--gap-grid, $gap-grid);
-  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(var(--min-element-width, 250px), 100%), 1fr)
+  );
 }
