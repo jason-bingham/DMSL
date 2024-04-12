@@ -111,7 +111,10 @@ $font-sizes: (
   500: 1.3125rem,
   400: 1.125rem,
   300: 1rem,
+  250: 0.85rem,
   200: 0.75rem,
+  150: 0.65rem,
+  100: 0.5rem,
 );
 
 @function fs($font-size) {
