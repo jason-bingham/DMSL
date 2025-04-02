@@ -28,6 +28,7 @@ const { photo, name, quote } = Astro.props;
     display: grid;
     gap: $gap-grid;
     padding: $padding-card-body;
+    grid-template-rows: min(100%, 200px) auto 1fr;
 
     & .testimonial-image {
       width: min(100%, 200px);
@@ -39,16 +40,20 @@ const { photo, name, quote } = Astro.props;
     & .testimonial-text {
       position: relative;
       font-style: italic;
+      font-size: fs(200);
     }
     & .testimonial-text::before {
       content: '"';
       position: absolute;
-      font-size: 7rem;
+      font-size: 6rem;
       top: -3rem;
       left: -1.75rem;
       color: var(--clr-testimonial-quotes);
       font-family: $ff-accent;
       z-index: -1;
+    }
+    & .testimonial-name {
+      font-size: fs(300);
     }
   }
 

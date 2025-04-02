@@ -20,6 +20,9 @@ $colors: (
     600: #cd5a01,
     700: #ab4a00,
   ),
+  complementary: (
+    400: #22e8ad,
+  ),
 );
 
 @function clr($color, $shade) {
@@ -35,11 +38,12 @@ $colors: (
   --clr-bg: #{clr(neutral, 200)};
   --clr-text: #{clr(neutral, 900)};
   --clr-primary: #{clr(primary, 400)};
+  --clr-complementary: #{clr(complementary, 400)};
   --clr-relief-bg: #{clr(neutral, 150)};
   --clr-shadow: #{clr(neutral, 300)};
 
   // UNIQUES
-  --clr-testimonial-quotes: #{clr(neutral, 250)};
+  --clr-testimonial-quotes: #{clr(neutral, 300)};
 
   // INTERMEDIARIES
   --clr-element-bg: var(--clr-primary);

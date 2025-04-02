@@ -1,3 +1,27 @@
+## Step-by-Step, Adding new projects
+
+1. Prep photos
+   1. Make longest side 1920px for gallery photos, and the thumbnail 400wx300h.
+   2. Name thumbnail "mainthumb\_[name]"
+2. Navigate to /projetos.astro
+   1. Copy <a>
+      1. Update href
+      2. Key:
+         | Type | Abbr. | Identifier | Result | Example |
+         | --- | --- | --- | --- | --- |
+         | Apartmento | Ap | [NN] | Ap[NN] | ApMV |
+         | Corporativa | Corp | [NN] | Corp[NN] | CorpPropz |
+         | Empreendimento | Empr | [NN] | Empr[NN] | EmprVB |
+         | Galpão | Gal | [NN] | Gal[NN] | GalJPF493 |
+         | Residência | Res | [NN] | Res[NN] | ResHPS |
+   2. Update <img> src to "/projetos/[name (see key above)]/mainthumb\_[name].jpg"
+   3. Update title. Spell out type if space permits
+   4. Find "projeto-profiles"
+   5. Copy up first "projeto-profile"
+   6. Update comment and id
+   7. Update path to photos and number of photos
+   8. Add or remove "contain" class as needed (on portrait or oddly shaped images)
+
 # Astro Starter Kit: Minimal
 
 ```sh
