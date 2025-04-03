@@ -24,7 +24,14 @@
 
 ## Pushing changes to Locaweb with FTP
 
-FTP password: DMSLarquitetos#02082208
+1. Open Filezilla
+2. Connect to host
+   1. Host: ftp.dmslarquitetos.com.br
+   2. Alt URL: ftp.dmslarquitetos.hospedagemdesites.ws
+   3. Usuário: dmslarquitetos
+   4. Senha: DMSLarquitetos#02082208
+   5. Porta: 21
+3. Drag altered files
 
 # Astro Starter Kit: Minimal
 
