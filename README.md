@@ -22,6 +22,10 @@
    7. Update path to photos and number of photos
    8. Add or remove "contain" class as needed (on portrait or oddly shaped images)
 
+## Pushing changes to Locaweb with FTP
+
+FTP password: DMSLarquitetos#02082208
+
 # Astro Starter Kit: Minimal
 
 ```sh
